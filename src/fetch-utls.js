@@ -17,6 +17,18 @@ export async function getOneBike(id) {
 };
 
 export async function deleteOneBike(id) {
-    const oneBike = await request.delete(`https://karls-bikes-app.herokuapp.com/karlsbikes/${id}`);
-        return oneBike.body;
+    const deletedBike = await request.delete(`https://karls-bikes-app.herokuapp.com/karlsbikes/${id}`);
+        return deletedBike.body;
+};
+
+export async function editBike(id, newInfo) {
+    const editedBike = await request.put(`https://karls-bikes-app.herokuapp.com/karlsbikes/${id}`)
+    .send(newInfo);
+        return editedBike.body;
+};
+
+export async function createBike(bike) {
+    const newBike = await request.post(`https://karls-bikes-app.herokuapp.com/karlsbikes/`)
+    .send(bike);
+        return newBike.body;
 };
