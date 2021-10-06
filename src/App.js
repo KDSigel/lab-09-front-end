@@ -28,7 +28,7 @@ export default class App extends Component {
                             render={(routerProps) => <CreatePage {...routerProps} />} 
                         />
                         <Route 
-                          path="/edit/:myId" 
+                          path="/editpage/:myId" 
                           exact
                           render={(routerProps) => <EditPage {...routerProps} />} 
                         />
