@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import request from 'superagent'
 
 export async function getAllBikes() {
