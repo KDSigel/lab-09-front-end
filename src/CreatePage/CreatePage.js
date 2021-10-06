@@ -47,7 +47,7 @@ handleSubmit = async e => {
                 </label>
                 
                 <label>rideable
-                    <select value={this.state.rideable} onChange={(e) => this.setState({ rideable: Boolean(e.target.value) })}>
+                    <select value={this.state.rideable} onChange={(e) => this.setState({ rideable: e.target.value })}>
                         <option value={true}>yes</option>
                         <option value={false}>no</option>
                     </select>

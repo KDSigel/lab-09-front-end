@@ -1,3 +1,7 @@
+.navigation {
+  height: 40px;
+}
+
 .active {
   background-color: orange;
 }
@@ -10,7 +14,6 @@ img {
 ul {
   display: flex;
   flex-wrap: wrap;
-  background-color: olive;
 }
 
 li {
