@@ -29,15 +29,15 @@ handleSubmit = async e => {
 
     render() {
         return (
-            <div className='create-page-entries'>
+            <div className='forms-elements'>
                 <form onSubmit={this.handleSubmit}>
-                <label>year<input value={this.state.year} type='number' maxLength='4' name='year' onChange={(e) => this.setState({ year: Number(e.target.value) })} required /></label>
-                <label>make<input value={this.state.make} type='text' name='make' onChange={(e) => this.setState({ make: e.target.value })} required /></label>
-                <label>model<input value={this.state.model} type='text' name='model' onChange={(e) => this.setState({ model: e.target.value })} required /></label>
-                <label>color<input value={this.state.color} type='text' name='color' onChange={(e) => this.setState({ color: e.target.value })} required /></label>
-                <label>image<input value={this.state.img} type='url' accept='image/*' name='image' onChange={(e) => this.setState({ img: e.target.value })} required /></label>
+                <label>Year <input value={this.state.year} type='number' min='1800' max='2050' name='year' onChange={(e) => this.setState({ year: Number(e.target.value) })} required /></label>
+                <label>Make <input value={this.state.make} type='text' name='make' onChange={(e) => this.setState({ make: e.target.value })} required /></label>
+                <label>Model <input value={this.state.model} type='text' name='model' onChange={(e) => this.setState({ model: e.target.value })} required /></label>
+                <label>Color <input value={this.state.color} type='text' name='color' onChange={(e) => this.setState({ color: e.target.value })} required /></label>
+                <label>Image (url) <input value={this.state.img} type='url' accept='image/*' name='image' onChange={(e) => this.setState({ img: e.target.value })} required /></label>
                 
-                <label>type
+                <label><span>Type </span> 
                     <select value={this.state.type_id} onChange={(e) => this.setState({ type_id: Number(e.target.value) })}>
                     {this.state.types.map(type => 
                                 <option key={`${type.id}`} value={type.id}>
@@ -46,10 +46,10 @@ handleSubmit = async e => {
                     </select>
                 </label>
                 
-                <label>rideable
+                <label><span>Rideable condition? </span> 
                     <select value={this.state.rideable} onChange={(e) => this.setState({ rideable: e.target.value })}>
-                        <option value={true}>yes</option>
-                        <option value={false}>no</option>
+                        <option value={true}>YES</option>
+                        <option value={false}>NO</option>
                     </select>
                 </label>
 
