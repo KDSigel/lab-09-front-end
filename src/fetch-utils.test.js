@@ -10,7 +10,8 @@ test('gets all the bikes', async () => {
         img: expect.any(String),
         rideable: expect.any(Boolean),
         owner_id: expect.any(Number),
-        type: expect.any(String)
+        type: expect.any(String),
+        type_id: expect.any(Number)
     };
     const actual = await getAllBikes();
   
@@ -55,7 +56,8 @@ test('gets one bike', async () => {
         img: expect.any(String),
         rideable: expect.any(Boolean),
         owner_id: expect.any(Number),
-        type: expect.any(String)
+        type: expect.any(String),
+        type_id: expect.any(Number)
     };
     const actual = await getOneBike(1);
   
