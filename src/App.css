@@ -29,8 +29,8 @@ ul {
   flex-wrap: wrap;
 }
 
-/* @media (max-width:43em) {
-} */
+@media (max-width:43em) {
+}
 
 li {
   margin: 1vw;
