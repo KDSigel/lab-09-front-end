@@ -32,6 +32,28 @@ export default class EditPage extends Component {
         await deleteOneBike(this.props.match.params.myId)
         this.props.history.push('/')
     }
+
+    handleUpload = () => {
+
+        let options = {
+          cloud_name: 'dgx9hagkn', 
+          upload_preset: 'superGreatUpload',
+          multiple: false,
+          // cropping: true,
+          resource_type: 'image'
+        };
+    
+        window.cloudinary.openUploadWidget(options, (error, result) => { 
+          if (error) {
+            console.error(error);
+            return;
+          }
+          
+          const image = result[0];
+          this.setState({ img: image.url }); // or you can store publicId for easier transformations
+        });
+    
+      }
     
     
         render() {
@@ -42,8 +64,8 @@ export default class EditPage extends Component {
                     <label>Make <input value={this.state.make} type='text' name='make' onChange={(e) => this.setState({ make: e.target.value })} required /></label>
                     <label>Model <input value={this.state.model} type='text' name='model' onChange={(e) => this.setState({ model: e.target.value })} required /></label>
                     <label>Color <input value={this.state.color} type='text' name='color' onChange={(e) => this.setState({ color: e.target.value })} required /></label>
-                    <label>Image(url) <input value={this.state.img} type='url' accept='image/*' name='image' onChange={(e) => this.setState({ img: e.target.value })} required /></label>
-                    
+                    {/* <label>Image(url) <input value={this.state.img} type='url' accept='image/*' name='image' onChange={(e) => this.setState({ img: e.target.value })} required /></label> */}
+                    <label>Image:<button type='button' onClick={this.handleUpload}>Upload</button></label>
                     <label><span>Type </span>
                         <select value={this.state.type_id} onChange={(e) => this.setState({ type_id: Number(e.target.value) })}>
                         {this.state.types.map(type => 
